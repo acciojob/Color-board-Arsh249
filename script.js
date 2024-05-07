@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const box = document.createElement('div');
         box.classList.add('square');
         board.appendChild(box);
+		cy.get('.square').click({ force: true });
 
         // Add event listener for smooth color change
         box.addEventListener('mouseover', function() {
