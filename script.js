@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
     const board = document.getElementById('board');
-
+cy.get('.square').click({ force: true });
     // Generate 800 boxes
     for (let i = 0; i < 800; i++) {
         const box = document.createElement('div');
         box.classList.add('square');
         board.appendChild(box);
-		cy.get('.square').click({ force: true });
+		
 
         // Add event listener for smooth color change
         box.addEventListener('mouseover', function() {
