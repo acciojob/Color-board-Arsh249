@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Reset color after 1 second
         box.addEventListener('mouseout', function() {
             setTimeout(function() {
-                box.style.backgroundColor = "#ccc";
+                box.style.backgroundColor = "rgb(29, 29, 29)";
             }, 1000);
         });
     }
