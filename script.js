@@ -1,1 +1,23 @@
-//your JS code here. If required.
+document.addEventListener("DOMContentLoaded", function() {
+    const board = document.getElementById('board');
+
+    // Generate 800 boxes
+    for (let i = 0; i < 800; i++) {
+        const box = document.createElement('div');
+        box.classList.add('square');
+        board.appendChild(box);
+
+        // Add event listener for smooth color change
+        box.addEventListener('mouseover', function() {
+            box.style.backgroundColor = "#ff0000";
+        });
+
+        // Reset color after 1 second
+        box.addEventListener('mouseout', function() {
+            setTimeout(function() {
+                box.style.backgroundColor = "#ccc";
+            }, 1000);
+        });
+    }
+});
+
