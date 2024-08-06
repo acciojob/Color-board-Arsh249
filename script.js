@@ -1,24 +1,20 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const board = document.getElementById('board');
-cy.get('.square').click({ force: true });
-    // Generate 800 boxes
-    for (let i = 0; i < 800; i++) {
-        const box = document.createElement('div');
-        box.classList.add('square');
-        board.appendChild(box);
-		
+ document.addEventListener("DOMContentLoaded", () => {
+        const container = document.getElementById('container');
 
-        // Add event listener for smooth color change
-        box.addEventListener('mouseover', function() {
-            box.style.backgroundColor = "#ff0000";
+        // Create 800 squares
+        for (let i = 0; i < 800; i++) {
+            const square = document.createElement('div');
+            square.classList.add('square');
+            container.appendChild(square);
+        }
+
+        // Add hover event to squares
+        container.addEventListener('mouseover', (e) => {
+            if (e.target.classList.contains('square')) {
+                e.target.classList.add('hovered');
+                setTimeout(() => {
+                    e.target.classList.remove('hovered');
+                }, 1000);
+            }
         });
-
-        // Reset color after 1 second
-        box.addEventListener('mouseout', function() {
-            setTimeout(function() {
-                box.style.backgroundColor = "rgb(29, 29, 29)";
-            }, 1000);
-        });
-    }
-});
-
+    });
